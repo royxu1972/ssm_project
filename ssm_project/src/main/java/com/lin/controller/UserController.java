@@ -50,7 +50,7 @@ public class UserController extends BaseController {
 	 */
 	@RequestMapping("/bootstrapTest1")  
 	public String bootStrapTest1(){
-		return "bootstrap/bootstrapTest1";
+		return "/bootstrap/bootstrapTest1";
 	}
 	
     /**

@@ -9,6 +9,6 @@
  ${user.userName}<br>
  ${user.userPassword}<br>
  ${user.userEmail}<br>
-<a href="ssm_project/bootstrapTest1">分页实例</a>
+<a href="${pageContext.request.contextPath}/bootstrapTest1">分页实例</a>
 </body>
 </html>

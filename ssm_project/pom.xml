@@ -258,9 +258,9 @@
 			<properties>
 				<!-- 数据库源设置 -->
 				<jdbc_driverClassName>com.mysql.jdbc.Driver</jdbc_driverClassName>
-				<jdbc_url>jdbc:mysql://localhost:3306/learning</jdbc_url>
+				<jdbc_url>jdbc:mysql://localhost:3306/mybatis</jdbc_url>
 				<jdbc_username>root</jdbc_username>
-				<jdbc_password>christmas258@</jdbc_password>
+				<jdbc_password>123456</jdbc_password>
                 <!-- 日志打印的设置 -->
 				<log.moduleName>ssm-project</log.moduleName>
 				<log.base>logs</log.base>
