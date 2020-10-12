@@ -1,6 +1,5 @@
 package com.lin.controller;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,51 +23,53 @@ import com.lin.util.PagedResult;
  * 功能概要：UserController
  * 
  * @author linbingwen
- * @since  2015年9月28日 
+ * @since 2015年9月28日
  */
 @Controller
 public class UserController extends BaseController {
-	
+
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	@Resource
 	private UserService userService;
-	
-	@RequestMapping("/")  
-    public ModelAndView getIndex(){    
-		ModelAndView mav = new ModelAndView("index"); 
+
+	@RequestMapping("/")
+	public ModelAndView getIndex() {
+		ModelAndView mav = new ModelAndView("index");
 		User user = userService.selectUserById(1);
-	    mav.addObject("user", user); 
-        return mav;  
-    }  
-	
+		mav.addObject("user", user);
+		return mav;
+	}
+
 	/**
 	 * 显示首页
+	 * 
 	 * @author linbingwen
-	 * @since  2015年10月23日 
+	 * @since 2015年10月23日
 	 * @return
 	 */
-	@RequestMapping("/bootstrapTest1")  
-	public String bootStrapTest1(){
+	@RequestMapping("/bootstrapTest1")
+	public String bootStrapTest1() {
 		return "/bootstrap/bootstrapTest1";
 	}
-	
-    /**
-     * 分页查询用户信息
-     * @author linbingwen
-     * @since  2015年10月23日 
-     * @param page
-     * @return
-     */
-    @RequestMapping(value="/list.do", method= RequestMethod.POST)
-    @ResponseBody
-    public String list(Integer pageNumber,Integer pageSize ,String userName) {
-		logger.info("分页查询用户信息列表请求入参：pageNumber{},pageSize{}", pageNumber,pageSize);
+
+	/**
+	 * 分页查询用户信息
+	 * 
+	 * @author linbingwen
+	 * @since 2015年10月23日
+	 * @param page
+	 * @return
+	 */
+	@RequestMapping(value = "/list.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String list(Integer pageNumber, Integer pageSize, String userName) {
+		logger.info("分页查询用户信息列表请求入参：pageNumber{},pageSize{}", pageNumber, pageSize);
 		try {
-			PagedResult<User> pageResult = userService.queryByPage(userName, pageNumber,pageSize);
-    	    return responseSuccess(pageResult);
-    	} catch (Exception e) {
+			PagedResult<User> pageResult = userService.queryByPage(userName, pageNumber, pageSize);
+			return responseSuccess(pageResult);
+		} catch (Exception e) {
 			return responseFail(e.getMessage());
 		}
-    }
+	}
 }

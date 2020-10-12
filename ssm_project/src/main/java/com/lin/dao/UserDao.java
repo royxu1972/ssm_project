@@ -1,6 +1,5 @@
 package com.lin.dao;
 
-
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -14,7 +13,7 @@ import com.lin.domain.User;
  * @since 2015年9月28日
  */
 public interface UserDao {
-	
+
 	/**
 	 * 
 	 * @author linbingwen
@@ -22,17 +21,15 @@ public interface UserDao {
 	 * @param userId
 	 * @return
 	 */
-	 User selectUserById(Integer userId);
-	
-	 /**
-	  * 
-	  * @author linbingwen
-	  * @since  2015年10月22日 
-	  * @param userName
-	  * @return
-	  */
-	 List<User> selectUserByUserName(@Param("userName") String userName);
-	 
-	 
+	User selectUserById(Integer userId);
+
+	/**
+	 * 
+	 * @author linbingwen
+	 * @since 2015年10月22日
+	 * @param userName
+	 * @return
+	 */
+	List<User> selectUserByUserName(@Param("userName") String userName);
 
 }
